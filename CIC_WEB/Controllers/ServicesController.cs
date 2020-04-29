@@ -45,7 +45,7 @@ namespace CIC_WEB.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken, ValidateInput(false)]
         public ActionResult Create([Bind(Include = "Id,ServiceName,Imgaes")] Service service)
         {
             if (ModelState.IsValid)
@@ -77,7 +77,7 @@ namespace CIC_WEB.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken, ValidateInput(false)]
         public ActionResult Edit([Bind(Include = "Id,ServiceName,Imgaes")] Service service)
         {
             if (ModelState.IsValid)

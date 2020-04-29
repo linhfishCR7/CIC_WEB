@@ -1,4 +1,6 @@
-﻿
+﻿@model IEnumerable<CIC_WEB.Service>
+
+
 @{
     ViewBag.Title = "ServicesDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -23,27 +25,30 @@
     <!-- Services Details Start -->
     <div class="services-details-area">
         <div class="container">
+
+           
             <div class="row">
-                <div class="col-12">
-                    <div class="single-services section-padding2">
-                        <div class="details-img mb-40">
-                            <img src="~/assets/img/gallery/services_details.png" alt="">
+                @foreach (var item in Model)
+                {
+                        <div class="col-12">
+                            <div class="single-services section-padding2">
+                                <div class="details-img mb-40">
+                                    
+                                    <img src="@Html.DisplayFor(modelItem => item.Imgaes)" alt="" style="height:544px;width:1170px">
+                                </div>
+                                <div class="details-caption">
+                                    <p>@Html.DisplayFor(modelItem => item.Noidung)</p>
+
+                                    <h3>How can we help?</h3>
+                                    <p>@Html.DisplayFor(modelItem => item.HowCanWeHelp)</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="details-caption">
-                            <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.Mollit anim laborum.Dvcuis aute iruxvfg.</p>
-
-                            <p class="mb-50">Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.Mollit anim laborum.Dvcuis aute iruxvfg.</p>
-
-                            <h3>How can we help?</h3>
-                            <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.Mollit anim laborum.Dvcuis aute iruxvfg.</p>
-
-                            <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.Mollit anim laborum.Dvcuis aute iruxvfg.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                }
+        </div>
         </div>
     </div>
     <!-- Services Details End -->
 </main>
+
 

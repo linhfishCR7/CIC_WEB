@@ -13,5 +13,9 @@ namespace CIC_WEB
         public string ServiceName { get; set; }
 
         public string Imgaes { get; set; }
+
+        public string Noidung { get; set; }
+
+        public string HowCanWeHelp { get; set; }
     }
 }

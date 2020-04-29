@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CIC_WEB;
+using System.Net;
 
 namespace CIC_WEB.Controllers
 {
@@ -55,11 +57,13 @@ namespace CIC_WEB.Controllers
         }
         public ActionResult ServicesDetail()
         {
+
             return View();
         }
         public ActionResult SimpleBlog()
         {
             return View();
         }
+
     }
 }

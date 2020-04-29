@@ -193,7 +193,7 @@
                                                     <img src="@Html.DisplayFor(modelItem => item.Images)" alt="">
                                                 </div>
                                                 <div class="project-cap">
-                                                    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>
+                                                    <a href="@Url.Action("ProjectsDetail","Home",null)" class="plus-btn"><i class="ti-plus"></i></a>
                                                     <h4>@Html.DisplayFor(modelItem => item.ProjectName)</h4>
                                                     <div class="plus-btn" style="margin-top:40px">
                                                         @Html.ActionLink("Edit", "Edit", new { id = item.Id })
