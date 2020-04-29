@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CIC_WEB.Service>
+﻿@model CIC_WEB.Service
 
 
 @{
@@ -28,23 +28,28 @@
 
            
             <div class="row">
-                @foreach (var item in Model)
-                {
+                
                         <div class="col-12">
                             <div class="single-services section-padding2">
                                 <div class="details-img mb-40">
-                                    
-                                    <img src="@Html.DisplayFor(modelItem => item.Imgaes)" alt="" style="height:544px;width:1170px">
+                                    <img src="@Html.DisplayFor(model => model.Imgaes)" alt="" style="height:544px;width:1170px">     
+                                    @*<img src="@Html.DisplayFor(modelItem => item.Imgaes)" alt="" style="height:544px;width:1170px">*@
                                 </div>
                                 <div class="details-caption">
-                                    <p>@Html.DisplayFor(modelItem => item.Noidung)</p>
+                                    <p>
+                                        @*@Html.DisplayFor(model => model.Noidung)*@
+                                        @Html.Raw(HttpUtility.HtmlDecode(Model.Noidung))
+
+
+</p>
 
                                     <h3>How can we help?</h3>
-                                    <p>@Html.DisplayFor(modelItem => item.HowCanWeHelp)</p>
+                                    <p>@Html.DisplayFor(model => model.HowCanWeHelp)
+</p>
                                 </div>
                             </div>
                         </div>
-                }
+                
         </div>
         </div>
     </div>

@@ -1,6 +1,7 @@
 ﻿using CIC_WEB.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -55,11 +56,22 @@ namespace CIC_WEB.Controllers
         {
             return View();
         }
-        public ActionResult ServicesDetail()
+        public ActionResult ServicesDetail(int? id)
         {
 
-            return View();
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Service service = _db.Services.Find(id);
+            if (service == null)
+            {
+                return HttpNotFound();
+            }
+            return View(service);
         }
+        
         public ActionResult SimpleBlog()
         {
             return View();
