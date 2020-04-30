@@ -99,6 +99,5 @@ D:\Github\CIC_WEB\CIC_WEB\obj\Debug\CIC_WEB.pdb
 D:\Github\CIC_WEB\CIC_WEB\obj\Debug\CIC_WEB.Migrations.InitialCreate.resources
 D:\Github\CIC_WEB\CIC_WEB\obj\Debug\CIC_WEB.csproj.GenerateResource.Cache
 D:\Github\CIC_WEB\CIC_WEB\obj\Debug\CIC_WEB.Migrations.them_Noi_Dung_va_HowCanWeHelp.resources
-D:\Github\CIC_WEB\CIC_WEB\obj\Debug\CIC_WEB.csprojResolveAssemblyReference.cache
 D:\Github\CIC_WEB\CIC_WEB\bin\CKFinder.dll
 D:\Github\CIC_WEB\CIC_WEB\bin\CKFinder.pdb

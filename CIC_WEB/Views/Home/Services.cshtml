@@ -51,9 +51,8 @@
                         </div>
                         <div class="service-cap">
                             <h4>@Html.DisplayFor(modelItem => item.ServiceName)</h4>
-                            @*<a href="@Url.Action(" ","Home/ServicesDetail",new { id = item.Id }))" class="more-btn">Read More <i class="ti-plus"></i></a>*@
-                            <span class="more-btn">Read More<i class="ti-plus">@Html.ActionLink(" ", "ServicesDetail", new { id = item.Id })</i></span>
-                            @*@Html.ActionLink("ServicesDetail1", "ServicesDetail", new { id = item.Id })*@
+                            <a href="@Url.Action("ServicesDetail","Home",new { id = item.Id })" class="more-btn">Read More <i class="ti-plus"></i></a>
+                          
                         </div>
                         <div class="service-icon">
                             <img src="~/assets/img/icon/services_icon1.png" alt="">

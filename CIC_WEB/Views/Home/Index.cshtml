@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CIC_WEB.Models.Project>
+﻿@model IEnumerable<CIC_WEB.Project>
 
 @{
     ViewBag.Title = "Index";
@@ -193,11 +193,11 @@
                                                     <img src="@Html.DisplayFor(modelItem => item.Images)" alt="">
                                                 </div>
                                                 <div class="project-cap">
-                                                    <a href="@Url.Action("ProjectsDetail","Home",null)" class="plus-btn"><i class="ti-plus"></i></a>
+                                                    <a href="@Url.Action("ProjectsDetail","Home",new { id = item.Id })" class="plus-btn"><i class="ti-plus"></i></a>
                                                     <h4>@Html.DisplayFor(modelItem => item.ProjectName)</h4>
-                                                    <div class="plus-btn" style="margin-top:40px">
+                                                    @*<div class="plus-btn" style="margin-top:40px">
                                                         @Html.ActionLink("Edit", "Edit", new { id = item.Id })
-                                                    </div>
+                                                    </div>*@
                                                 </div>
                                             </div>
                                         </div>

@@ -6,8 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using CIC_WEB.Context;
-using CIC_WEB.Models;
+using CIC_WEB;
 
 namespace CIC_WEB.Controllers
 {
@@ -18,10 +17,7 @@ namespace CIC_WEB.Controllers
         // GET: Projects
         public ActionResult Index()
         {
-            var data = (from p in db.Projects.OrderByDescending(i => i.Id)
-                        select p).Take(2);
-
-            return View(data.ToList());
+            return View(db.Projects.ToList());
         }
 
         // GET: Projects/Details/5
@@ -50,7 +46,7 @@ namespace CIC_WEB.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,ProjectName,Images")] Project project)
+        public ActionResult Create([Bind(Include = "Id,ProjectName,Images,NoiDung,OurMainGoal,OurChallenges")] Project project)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +78,7 @@ namespace CIC_WEB.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,ProjectName,Images")] Project project)
+        public ActionResult Edit([Bind(Include = "Id,ProjectName,Images,NoiDung,OurMainGoal,OurChallenges")] Project project)
         {
             if (ModelState.IsValid)
             {

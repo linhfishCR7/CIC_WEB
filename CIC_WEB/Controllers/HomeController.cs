@@ -1,19 +1,15 @@
-﻿using CIC_WEB.Context;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using CIC_WEB;
 using System.Net;
 
 namespace CIC_WEB.Controllers
 {
     public class HomeController : Controller
     {
-        private ProjectContext db = new ProjectContext();
         private ServiceContext _db = new ServiceContext();
+        private ProjectContext db = new ProjectContext();
+
         // GET: Home
         public ActionResult Index()
         {
@@ -52,9 +48,18 @@ namespace CIC_WEB.Controllers
 
             return View(data.ToList());
         }
-        public ActionResult ProjectsDetail()
+        public ActionResult ProjectsDetail(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Project project = db.Projects.Find(id);
+            if (project == null)
+            {
+                return HttpNotFound();
+            }
+            return View(project);
         }
         public ActionResult ServicesDetail(int? id)
         {

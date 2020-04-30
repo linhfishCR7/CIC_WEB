@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CIC_WEB.Models.Project>
+﻿@model IEnumerable<CIC_WEB.Project>
+
 @{
     ViewBag.Title = "Project";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -57,7 +58,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-12">
                     <!-- Nav Card -->
@@ -74,26 +74,22 @@
                                                     <img src="@Html.DisplayFor(modelItem => item.Images)" alt="">
                                                 </div>
                                                 <div class="project-cap">
-                                                    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>
+                                                    <a href="@Url.Action("ProjectsDetail","Home",new { id = item.Id })" class="plus-btn"><i class="ti-plus"></i></a>                                                    
                                                     <h4>@Html.DisplayFor(modelItem => item.ProjectName)</h4>
-                                                    <div class="plus-btn" style="margin-top:40px">
-                                                        @Html.ActionLink("Edit", "Edit", new { id = item.Id })
-                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
-                                    }@*Database*@
-                                    </div>
-                                    
-                                    <!-- End Nav Card -->
+                                    }
                                 </div>
                             </div>
                         </div>
+
                     </div>
+                    <!-- End Nav Card -->
                 </div>
-
             </div>
-
-        </section>
-        <!-- Project Area End -->
-    </main>
+        </div>
+    </section>
+    <!-- Project Area End -->
+</main>

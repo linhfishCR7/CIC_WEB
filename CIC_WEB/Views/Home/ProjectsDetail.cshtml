@@ -1,4 +1,5 @@
-﻿
+﻿@model CIC_WEB.Project
+
 @{
     ViewBag.Title = "ProjectsDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -33,18 +34,16 @@
                 <div class="col-12">
                     <div class="single-services section-padding2">
                         <div class="details-img mb-40">
-                            <img src="~/assets/img/gallery/project_details.jpg" alt="">
+                            <img src="@Html.DisplayFor(model => model.Images)" alt="" style="height:544px;width:1170px">
                         </div>
                         <div class="details-caption">
-                            <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.Mollit anim laborum.Dvcuis aute iruxvfg.</p>
-
-                            <p class="mb-50">Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.Mollit anim laborum.Dvcuis aute iruxvfg.</p>
+                            <p>@Html.DisplayFor(model => model.NoiDung)</p>
 
                             <h3>Our main goal</h3>
-                            <p class="mb-50">Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.Mollit anim laborum.Dvcuis aute iruxvfg.</p>
+                            <p class="mb-50">@Html.DisplayFor(model => model.OurMainGoal)</p>
 
                             <h3>Take a look to our challenges</h3>
-                            <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.Mollit anim laborum.Dvcuis aute iruxvfg.</p>
+                            <p>@Html.DisplayFor(model => model.OurChallenges)</p>
                         </div>
                     </div>
                 </div>
